@@ -1,0 +1,18 @@
+.a-logo{
+    color: #fff;
+    margin-top: 7px;
+}
+.a-logo span{
+    color: red;
+}
+.dataTable tbody tr td.col-center {
+    text-align: center;
+}
+
+.dataTable tbody tr td.col-right {
+    text-align: right;
+}
+
+.filter-box .form-group {
+    margin-bottom: 0;
+}
