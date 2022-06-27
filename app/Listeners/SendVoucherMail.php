@@ -34,7 +34,7 @@ class SendVoucherMail
 
         $arrSaved = array(
             'code'          => $code,
-            'nominal'       => 50000,
+            'nominal'       => 100000,
             'start_date'    => $dateNow,
             'end_date'      => (new Carbon($dateNow))->addDays(7)->format('Y-m-d')
         );
