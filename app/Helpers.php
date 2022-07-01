@@ -186,7 +186,7 @@ function arrCourier()
 {
     return [
         'jne'=>'JNE',
-        'tiki'=>'TIKI',
+        // 'tiki'=>'TIKI',
         //'jnt'=>'J&T Express',
 
         //'pos' => 'Pos',
