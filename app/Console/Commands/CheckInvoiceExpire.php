@@ -95,8 +95,8 @@ class CheckInvoiceExpire extends Command
                     $invoice->product_bookeds()->delete();
 
                     // send email
-                    Mail::to($invoice->user->email)
-                            ->send(new InvoiceExpiredMail($invoice));
+                    // Mail::to($invoice->user->email)
+                    //         ->send(new InvoiceExpiredMail($invoice));
                 }
 
             }
