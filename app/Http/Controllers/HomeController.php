@@ -61,6 +61,35 @@ class HomeController extends Controller
         return view('home', compact('utils'));
     }
 
+    public function webhome()
+    {
+
+        $utils['slideshows'] = Slideshow::select('title', 'title_id', 'url', 'target', 'image', 'logo')
+            ->where('status', 1)
+            ->orderBy('sort_order', 'ASC')
+            ->limit(5)
+            ->get();
+
+        $utils['arrLogo'] = Slideshow::arrLogo();
+
+        $utils['banners'] = Banner::select('title', 'title_id', 'url', 'target', 'image', 'banner_type')
+            ->orderBy('banner_type', 'ASC')
+            ->get();
+
+        $utils['products']['newReleases'] = Product::getProductList(false, 'new-arrivals');
+        $utils['products']['sales'] = Product::getProductList(false, 'sale');
+        $utils['products']['bestSeller'] = Product::getProductList(false, 'best-seller');
+
+        $utils['articles'] = Article::select('title','title_id', 'slug', 'preview','preview_id', 'image', 'published_on')
+            ->where('status',1)
+            ->where('published_on','<=', Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s'))
+            ->orderBy('published_on', 'DESC')
+            ->limit(3)
+            ->get();
+
+        return view('webhome', compact('utils'));
+    }
+
     public function setCurrency(Request $request)
     {
         session(['appcurrency' => $request->currency]);

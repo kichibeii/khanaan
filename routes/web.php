@@ -23,6 +23,8 @@ Route::group([
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Route::get('/', 'HomeController@index')->name('home');
 
+    Route::get('webhome', 'HomeController@webhome')->name('webhome');
+
     Route::get('blog/{slug}', 'ArticleController@show')->name('blog.show');
     Route::get('blog', 'ArticleController@index')->name('blog');
 
